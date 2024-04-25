@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        /* *{
+            margin: 0%;
+            padding: 0%;
+        }
+        h2{
+            text-align: center;
+            color: darkmagenta;
+        }
+        .container{
+            padding :30 , 20, 30 ;
+        }
+        table{
+            border: solid 1px black;
+            padding: 30px;
+            gap: 20px;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table > thead{
+            padding: 20px;
+        }
+        table , th , td{
+            border: solid 1px black;
+            align-items: center; 
+            width: 100px;
+            height: 70px;
+        }
+        table, thead, tr{
+            padding: 50px;
+            
+        } */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #d6caca;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>List of level three students</h2>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>S/No</th>
+                    <th>Name</th>
+                    <th>Admission Number</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ishaq</td>
+                    <td>294</td>
+                    <td>Software</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Umar</td>
+                    <td>234</td>
+                    <td>It</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project one</title>
+    <Style>
+        *{
+        margin: 0;
+        padding: 0;
+         }
+        
+        header{
+            background-color:aqua;
+        }
+        .container{
+            background-image: linear-gradient(blue, green);
+        }
+        h2{
+            color: bisque;
+        }
+        ul {
+            background-color: rgb(139, 231, 77);
+            display: flex;
+            gap: 5rem; 
+        }
+
+        ul > li{
+            list-style: none;
+            padding: 25px;
+            border: 10rem;
+        }
+        ul > li > :hover{
+            background-color: rgba(71, 143, 202, 0.493);
+        }
+       ul > li > a:link{
+        text-decoration: none;
+        color: rgb(226, 202, 218);
+       }
+       img{
+        width: fit-content;
+       }
+       ul > li:visited{
+        color: rgb(226, 202, 218);
+       }
+       .footer > .contents1{
+            display: flex;
+            flex-direction: row;
+        }
+        .contents1{
+            text-align: center;
+            padding: 30px;
+            background-color: aqua;
+        }
+    </Style>
+</head>
+<body>
+    <header>
+        <h2 style="text-align: center; font-size: 50px; padding: 1rem;"><span style="color: brown;">Soft</span>ware Systems</h2>
+        <ul >
+            <li><a href="introduction.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="grid.html">Stock</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="contents"><img src="OIP.JPEG"></div>
+        <p>We offer many services here like:</p>
+        <dl>
+            <dt>Hardware Repairs</dt>
+            <dd>We repar all kinds of computers and other devices related to computers. </dd>
+            <dt>Sales Department</dt>
+            <dd>We sell different kinds of computers like
+                <ol>
+                    <li>Laptop</li>
+                    <li>Desktop</li>
+                    <li>Standalone</li>
+                    <li>All in one</li>
+                </ol>
+            </dd>
+        </dl>
+        <p>You can visit us on our <a href="https://facebook.com">facebook</a> handle </p>
+    </div>
+    <footer>
+        <div class="contents1"> <p>Software Systems. copywrite 2024</p></div>
+       
+    </footer>
+
+    
+</body>
+</html>

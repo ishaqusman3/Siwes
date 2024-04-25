@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price Index</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0%;
+        }
+        body{
+            width :auto;
+            height :100vh;
+            box-sizing :border-box;
+            background-image :linear-gradient( blue silver);
+            background-color: silver;
+        }
+        h2{
+            padding-top: 100px;
+            text-align: center;
+            font-size: 40px;
+            color: rgba(3, 112, 112, 0.678);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .card{
+            margin-top: 30px;
+            text-align: center;
+            font-size: 25px;
+            color: darkslateblue;
+            font-family: monospace;
+        }
+        .content{
+            margin-top: 10px;
+            text-align: center;
+            font-size: 25px;
+            color: rgb(36, 31, 73);
+            font-family:'Courier New', Courier, monospace;
+        }
+        /* @keyframes move {
+            from {transform: translateX(-100%);}
+            to {transform: translateX(100%);}
+        } */
+
+        #disclaimer {
+            transition-timing-function: linear;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bitcoin Price Index</h2>
+        <div class="content">
+            <marquee><p id="disclaimer"></p></marquee>
+            <strong><p id="time" style="margin-top: 30px;"></p></strong>
+        </div>
+        <div class="cards-container">
+            <div class="card" id = "usd">Loading....</div>
+            <div class="card" id = "gbp">Loading....</div>
+            <div class="card" id = "eur">Loading....</div>
+        </div>
+    </div>
+    <script>
+        let bpi = {
+            url: "https://api.coindesk.com/v1/bpi/currentprice.json",
+            getData: function(){
+                fetch(this.url).then((øresponse)=>response.json()).then((data)=>this.displayData(data));
+            },
+            displayData: function(data){
+                const dollar = {symbol:symbol, rate:rate} = data.bpi.USD;
+                const pound = {symbol:symbol, rate:rate} = data.bpi.GBP;
+                const euro = {symbol:symbol, rate:rate} = data.bpi.EUR;
+                const time = {updated:updated} = data.time;
+
+                document.getElementById("time").innerHTML= "The price of Bitcoin as at:"+time.updated;
+                document.getElementById("disclaimer").innerHTML= data.disclaimer;
+                document.getElementById("usd").innerHTML=" Dollar: "+ dollar.symbol+dollar.rate;
+                document.getElementById("gbp").innerHTML=" Pound: "+ pound.symbol+pound.rate;
+                document.getElementById("eur").innerHTML=" Euro: "+ euro.symbol+euro.rate;
+            }
+
+        }
+        const result = () => bpi.getData();
+        setInterval(result, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js2</title>
+</head>
+<body>
+    
+    <h2 id="txt">Welcome</h2>
+    <button id="btn">Press Here</button>
+</body>
+<script>
+    var h2 = document.getElementById("txt");
+    var btn = document.getElementById("btn");
+    // btn.addEventListener("mouseover", function(){
+    //     btn.innerHTML = "click me";
+    // })
+    // btn.addEventListener("mouseleave", function(){
+    //     btn.innerHTML = "Press Here";
+    // })
+    btn.addEventListener("click", function(){
+        btn.innerHTML = "Pressed";
+        h2.innerHTML= "welcome";
+        h2.style= "color: red; font-size: 35px";
+    })
+   
+</script>
+</html>

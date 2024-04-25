@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            padding-top: 40px;
+            border: 1px solid;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 39px;
+            background-color: #000000d0;
+            border-style: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #head{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            font-size: 40px;
+            color: #3c53b8;
+        }
+        #town{
+            font-family:cursive;
+            text-align: center;
+            font-size: 20px;
+            color: #8191db;
+            padding-top: 40px;
+        }
+        #temp{
+            font-family:cursive;
+            text-align: center;
+            font-size: 20px;
+            color: #3c53b8;
+            padding-top: 40px;
+        }
+        label{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+            color: #687acc;
+        }
+        button{
+            padding: 10px;
+        }
+        #form{
+            display: flex;
+            margin-top: 20px;
+        }
+        input{
+            border-radius: 20px;
+            color: rgb(228, 229, 247); 
+            border-style: none;
+            margin-left: 7px;
+            background-color: #1c308b67;
+            caret-color: rgb(255, 255, 255);
+        }
+        button{
+            border-radius: 50px;
+            margin-left: 7px;
+            color: white;
+            border-style: none;
+            background-color: #3c53b8;
+        }
+        button:hover{
+            background-color: #7c7c7c6b;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        #svg{
+            font-size: larger;
+        }
+        /* Select the input element and style its placeholder */
+        input::placeholder {
+            color: white; /* Placeholder text color */
+            font-style: italic; 
+            text-align: center;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin:0;
+            background-color: #222;
+            background-image: url('https://source.unsplash.com/1600x900/?landscape');
+        }
+        p{
+            font-size: 30px;
+            color: #3c53b8;
+            font-family: sans-serif;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <h2 id="head">Weather App</h2>
+            <div id="form">
+                <label for="" >Enter city</label>
+                <input type="text"autofocus id="city" placeholder="City...."  >
+                <button type="button"><svg id="svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"></path><path d="M11.412,8.586C11.791,8.966,12,9.468,12,10h2c0-1.065-0.416-2.069-1.174-2.828c-1.514-1.512-4.139-1.512-5.652,0 l1.412,1.416C9.346,7.83,10.656,7.832,11.412,8.586z"></path></svg></button>
+            </div>
+            <h2 id="town">City</h2>
+            <p id="temp"> </p>
+            
+        </form>
+    </div>
+    <script>
+        var input = document.getElementById("city");
+        input.addEventListener("click", function() {
+        input.focus();
+        })
+        let weather = {
+            apikey: "46c832a306209d70e0b1b1646a88800e",
+            fetchWeather: function (city){
+                fetch(
+                    "https://api.openweathermap.org/data/2.5/weather?q="
+                    + city 
+                    +"&appid="
+                    + this.apikey
+                    )
+                    .then((response) => response.json())
+                    .then((data) => this.displayWeather(data));
+            },
+            displayWeather: function(data){
+                const { name } = data;
+                const { temp } = data.main;
+                document.querySelector("#town").innerHTML = "Temperature in "+name;
+                document.querySelector("#temp").innerText = (temp-273).toFixed(2) + "°C";
+            }
+        }    
+        const getData = () =>{
+            var city = document.querySelector("#city").value;
+            weather.fetchWeather(city);
+        }
+        document.querySelector("button").addEventListener("click", getData)
+        var input = document.getElementById("city");
+
+        
+    </script>
+        
+</body>
+</html>

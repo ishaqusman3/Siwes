@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Jokes</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0%;
+        }
+        body{
+            width :auto;
+            height :100vh;
+            box-sizing :border-box;
+            background-image :linear-gradient( blue silver);
+            background-color: silver;
+        }
+        h2{
+            padding-top: 100px;
+            text-align: center;
+            font-size: 40px;
+            color: rgba(3, 112, 112, 0.678);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        p{
+            margin-top: 30px;
+            text-align: center;
+            font-size: 25px;
+            color: darkslateblue;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="txt"></h2>
+        <br><br>
+        <p id="answer"></p>
+    </div>
+
+    <script>
+        let jokes = {
+            url: "https://official-joke-api.appspot.com/random_joke",
+            getData: function(){
+                fetch(this.url).then((res)=>res.json()).then((data)=>this.displayData(data));
+            },
+            displayData: function(data){
+                document.getElementById('txt').innerHTML = data.setup;
+                document.getElementById('answer').innerHTML = data.punchline;
+            }
+        }
+        function result(){
+           
+            return jokes.getData(); 
+        
+        }
+
+        setInterval(result, 10000);
+        
+
+        joke.getData();
+    </script>
+</body>
+</html>

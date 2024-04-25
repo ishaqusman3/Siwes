@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <h2 id="txt">HELLO</h2>
+    <button id = 'btn'>CLick</button>
+    <!-- <button onclick="document.getElementById('txt').innerHTML = 'WELCOME'">CLICK</button> -->
+    <script>
+        
+        document.getElementById('btn').addEventListener('click', function(){
+            document.getElementById('txt').innerText = "Welcome"
+            document.getElementById('txt').style ="font-size: 30px; font-family:Sans-serif; color:blue"
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >    
+
+    <title>Document</title>
+    <style>
+         .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 40px;
+            border: 1px solid;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 39px;
+            background-color: silver;
+            border-style: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+         }
+         #toggleIcon{
+            margin-top: 13px;
+            margin-left: 5px;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="balance">Balance</h2>
+        <div id="checkbalance" style="display: flex;">
+            <p id="view">****</p>
+            <span> <i id="toggleIcon" class="fas fa-eye toggle-icon" onclick="toggleBalance()"></i> </span>
+        </div>
+    </div>
+    <script>
+        let balanceVisible = false;
+        const balance =  document.getElementById("balance");
+        const toggleIcon = document.getElementById("toggleIcon");
+        toggleBalance = () =>{
+            balanceVisible = !balanceVisible;
+            if (balanceVisible){
+                document.getElementById("view").innerHTML= "$400"
+                toggleIcon.classList.remove ("fa-eye")
+                toggleIcon.classList.add("fa-eye-slash")
+            }
+            else{
+                document.getElementById("view").innerHTML= "****"
+                toggleIcon.classList.remove("fa-eye-slash")
+                toggleIcon.classList.add ("fa-eye")
+            }
+        }
+    </script>
+</body>
+
+</html>

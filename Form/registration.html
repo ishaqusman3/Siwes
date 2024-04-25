@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        h2{
+            margin-top: 15px;
+            text-align: center;
+            font-family: sans-serif;
+            color:rgb(139, 136, 136) ;
+        }
+        .card{
+            
+            /* align-items: center; */
+            /* padding: 15px; */
+            color: grey;
+            padding: 10px;
+            /* padding-left: 10px; */
+            /* padding-right: 10px; */
+        }
+        input{
+            padding: 7px;
+            border-style: none;
+            border-radius: 7px;
+            width: 100%;
+            
+        }
+        form{
+            margin-top: 15px;
+            border: solid 1px black;
+            /* margin: 20px 50px 0px 50px; */
+            background-color: silver;
+            padding: 30PX;
+            width: 30%;
+            /* width: 30%; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            
+            
+        }
+        input[type = submit]{
+            background-color: whitesmoke;
+            padding: 10px;
+            cursor: pointer;
+        }
+        input[type = submit]:hover{
+            background-color: rgb(146, 143, 143);
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Sign Up</h2>
+    </div>
+   <div class="container">
+        <form action="">
+                <div class="card">
+                    <input type="text" placeholder="First Name">
+                </div>
+                <div class="card">
+                    <input type="text" placeholder="Second Name">
+                </div>
+                <div class="card">
+                    <input type="email" placeholder="E-mail">
+                </div>
+                <div class="card">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <div class="card">
+                    <input type="password" placeholder="Set password">
+                </div>
+                <div class="card">
+                    <input type="password" placeholder="Confirm password">
+                </div>
+                <div class="card">
+                    <input type="Submit" value="Sign-Up">
+                </div>       
+        </form>
+    </div>
+</body>
+</html>
+

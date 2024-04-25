@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >    
+    <title>Check Balance</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin:0;
+            background-color: #daeefce0;
+        }
+        #checkbalance{
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            border: 1px solid;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 39px;
+            background-color: silver;
+            border-style: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #balancecheck{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        h2{
+            text-align: center;
+            font-size: 45px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        p{
+            text-align: center;
+            font-size: 25px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #toggleIcon{
+            font-size: 25px;
+            margin-top: -5px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="checkbalance">
+        <h2 id="balance">Balance</h2>
+        <div id="balancecheck">
+            <p id="view">****</p>
+            <span> <i id="toggleIcon" class="fas fa-eye toggle-icon" onclick="toggleBalance()"></i> </span>
+        </div>
+    </div>
+    <script>
+        let balanceVisible = false;
+        const balance =  document.getElementById("balance");
+        const toggleIcon = document.getElementById("toggleIcon");
+        toggleBalance = () =>{
+            balanceVisible = !balanceVisible;
+            if (balanceVisible){
+                document.getElementById("view").innerHTML= "$400"
+                toggleIcon.classList.remove ("fa-eye")
+                toggleIcon.classList.add("fa-eye-slash")
+            }
+            else{
+                document.getElementById("view").innerHTML= "****"
+                toggleIcon.classList.remove("fa-eye-slash")
+                toggleIcon.classList.add ("fa-eye")
+            }
+        }
+    </script>
+</body>
+</html>

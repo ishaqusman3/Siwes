@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Forms</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* padding: 5s0px; */
+        }
+        form{
+            padding: 50px;
+            border: solid 1px black;
+            margin: 30px 50px 0 50px;
+            background-color: silver;
+            width: 30%;
+            height: 40vh;
+        }
+        .form-control input{
+            margin-top: 10px;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: 7px;
+            width: 100%;
+            outline: none;
+        }
+        input[type=submit]{
+            background-color: darkgray;
+            color: white;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        input[type=submit]:hover{
+            background-color: white;
+            color: darkgray;
+            cursor: pointer;
+        }
+        h2{
+            color: darkgrey;
+            margin-top: 20px;
+        }
+        span a{
+            text-decoration: none;
+            color: white;
+            width: 500;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+    <h2>Login Page</h2>
+    <form action="">
+         <div class="form-control">
+            <input type="text" placeholder="Username" required>
+         </div>
+         <div class="form-control">
+            <input type="password" placeholder="password" required>
+         <div class="form-control">
+            <input type="submit" value="Login">
+         </div>
+         <p>Don't have an account? <span><a href="registration.html">Click here</a></span></p>
+    </form>
+</div>
+</body>
+</html>

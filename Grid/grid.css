@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: auto;
+    height: 100%;
+    background-image: linear-gradient(rgb(74, 176, 223),rgb(45, 86, 223));
+}
+.content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+
+
+}
+.card{
+    background-color: azure;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 10px 2px brown;
+    text-align: center;
+
+}
+.card:hover{
+    background-image: linear-gradient(rgb(74, 176, 223),rgb(45, 86, 223));
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+}
+#welcome{
+    font-size: 40px;
+    color:goldenrod;
+    text-align: center;
+    background-color: aqua;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+header{
+    background-color:aqua;
+}
+#first {
+    color: bisque;
+}
+ul {
+    background-color: rgb(139, 231, 77);
+    display: flex;
+    gap: 5rem; 
+}
+
+ul > li{
+    list-style: none;
+    padding: 25px;
+    border: 10rem;
+}
+ul > li > :hover{
+    background-color: rgba(71, 143, 202, 0.493);
+}
+ul > li > a:link{
+text-decoration: none;
+color: rgb(226, 202, 218);
+}
+ul > li:visited{
+color: rgb(226, 202, 218);
+}
+.footer > .contents{
+    display: flex;
+    flex-direction: row;
+}
+.contents{
+    text-align: center;
+    padding: 30px;
+    background-color: aqua;
+}
